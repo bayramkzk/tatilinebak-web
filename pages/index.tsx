@@ -1,6 +1,13 @@
 import { HEADER_HEIGHT } from "@/components/Header";
 import Layout from "@/components/Layout";
-import { Button, Center, createStyles, Modal, Stack } from "@mantine/core";
+import {
+  Button,
+  Center,
+  createStyles,
+  Modal,
+  Stack,
+  useMantineColorScheme,
+} from "@mantine/core";
 import { showNotification } from "@mantine/notifications";
 import type { NextPage } from "next";
 import { useState } from "react";
@@ -14,6 +21,7 @@ const useStyles = createStyles((theme) => ({
 const Home: NextPage = () => {
   const { classes } = useStyles();
   const [modal, setModal] = useState(false);
+  const { toggleColorScheme } = useMantineColorScheme();
 
   const openModal = () => setModal(true);
   const closeModal = () => setModal(false);
@@ -22,6 +30,7 @@ const Home: NextPage = () => {
       title: "Notification example",
       message: "Hello world 🙃!",
     });
+  const toggleDarkMode = () => toggleColorScheme();
 
   return (
     <Layout containerProps={{ className: classes.container }} omitPadding>
@@ -32,6 +41,9 @@ const Home: NextPage = () => {
           </Button>
           <Button onClick={pushNotification} color="lime">
             Push notification
+          </Button>
+          <Button onClick={toggleDarkMode} color="indigo">
+            Toggle dark mode
           </Button>
         </Stack>
 
