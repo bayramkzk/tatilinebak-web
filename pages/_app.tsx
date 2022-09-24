@@ -5,15 +5,17 @@ import {
   MantineProvider,
   MantineThemeOverride,
 } from "@mantine/core";
-import { useHotkeys, useLocalStorage } from "@mantine/hooks";
+import { useColorScheme, useHotkeys, useLocalStorage } from "@mantine/hooks";
 import { NotificationsProvider } from "@mantine/notifications";
 import { AppProps } from "next/app";
 import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const preferredColorScheme = useColorScheme();
+
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: "mantine-color-scheme",
-    defaultValue: "light",
+    defaultValue: preferredColorScheme,
     getInitialValueInEffect: true,
   });
 
