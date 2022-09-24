@@ -1,3 +1,4 @@
+import Layout from "@/components/Layout";
 import { Button, Center, Modal, Stack } from "@mantine/core";
 import { showNotification } from "@mantine/notifications";
 import type { NextPage } from "next";
@@ -15,20 +16,22 @@ const Home: NextPage = () => {
     });
 
   return (
-    <Center sx={{ width: "100%", height: "100%" }}>
-      <Stack>
-        <Button onClick={openModal} color="blue">
-          Show dialog!
-        </Button>
-        <Button onClick={pushNotification} color="lime">
-          Push notification
-        </Button>
-      </Stack>
+    <Layout>
+      <Center sx={{ width: "100%", height: "100%" }}>
+        <Stack>
+          <Button onClick={openModal} color="blue">
+            Show dialog!
+          </Button>
+          <Button onClick={pushNotification} color="lime">
+            Push notification
+          </Button>
+        </Stack>
 
-      <Modal onClose={closeModal} opened={modal}>
-        Hello world
-      </Modal>
-    </Center>
+        <Modal onClose={closeModal} opened={modal}>
+          Hello world
+        </Modal>
+      </Center>
+    </Layout>
   );
 };
 
