@@ -58,7 +58,9 @@ const SocialLinkGroup: React.FC = () => {
       {links.map((link) => (
         <Anchor
           href={link.link}
+          key={link.link}
           className={classes.link}
+          target="_blank"
           sx={{
             color: link.color,
             "&:hover": { color: "#fff", backgroundColor: link.color },
