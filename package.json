@@ -21,6 +21,7 @@
     "@mantine/notifications": "^5.4.1",
     "@mantine/nprogress": "^5.4.1",
     "@mantine/rte": "^5.4.1",
+    "@tabler/icons": "^1.100.0",
     "dayjs": "^1.11.5",
     "embla-carousel-react": "^7.0.3",
     "next": "12.3.1",
