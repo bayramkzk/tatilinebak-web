@@ -1,4 +1,3 @@
-import { useTheme } from "@emotion/react";
 import { Anchor, createStyles } from "@mantine/core";
 import {
   IconBrandFacebook,
@@ -36,21 +35,23 @@ const links = [
     link: "https://wa.me/905551234567",
     content: <IconBrandWhatsapp />,
     color: "#25D366",
+    ariaLabel: "WhatsApp ile iletişime geçin",
   },
   {
     link: "https://tr-tr.facebook.com/NASA",
     content: <IconBrandFacebook />,
     color: "#4267B2",
+    ariaLabel: "Facebook sayfamızı ziyaret edin",
   },
   {
     link: "https://www.instagram.com/nasa",
     content: <IconBrandInstagram />,
     color: "#E1306C",
+    ariaLabel: "Instagram sayfamızı ziyaret edin",
   },
 ];
 
 const SocialLinkGroup: React.FC = () => {
-  const theme = useTheme();
   const { classes } = useStyles();
 
   return (
@@ -61,6 +62,7 @@ const SocialLinkGroup: React.FC = () => {
           key={link.link}
           className={classes.link}
           target="_blank"
+          aria-label={link.ariaLabel}
           sx={{
             color: link.color,
             "&:hover": { color: "#fff", backgroundColor: link.color },
