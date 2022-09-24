@@ -1,22 +1,30 @@
+import { HEADER_HEIGHT } from "@/components/Header";
 import Layout from "@/components/Layout";
-import { Button, Center, Modal, Stack } from "@mantine/core";
+import { Button, Center, createStyles, Modal, Stack } from "@mantine/core";
 import { showNotification } from "@mantine/notifications";
 import type { NextPage } from "next";
 import { useState } from "react";
 
+const useStyles = createStyles((theme) => ({
+  container: {
+    height: `calc(100% - ${HEADER_HEIGHT * 2}px)`,
+  },
+}));
+
 const Home: NextPage = () => {
+  const { classes } = useStyles();
   const [modal, setModal] = useState(false);
 
   const openModal = () => setModal(true);
   const closeModal = () => setModal(false);
   const pushNotification = () =>
     showNotification({
-      title: "Default notification",
-      message: "Hey there, your code is awesome! 🤥",
+      title: "Notification example",
+      message: "Hello world 🙃!",
     });
 
   return (
-    <Layout>
+    <Layout containerProps={{ className: classes.container }} omitPadding>
       <Center sx={{ width: "100%", height: "100%" }}>
         <Stack>
           <Button onClick={openModal} color="blue">

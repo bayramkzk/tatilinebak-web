@@ -15,7 +15,7 @@ import BrandLogo from "./BrandLogo";
 import LinkGroup from "./LinkGroup";
 import SocialLinkGroup from "./SocialLinkGroup";
 
-const HEADER_HEIGHT = 75;
+export const HEADER_HEIGHT = 75;
 
 const useStyles = createStyles((theme) => ({
   root: {
