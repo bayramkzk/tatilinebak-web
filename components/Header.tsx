@@ -4,6 +4,8 @@ import {
   createStyles,
   Group,
   Header as BaseHeader,
+  HeaderProps as BaseHeaderProps,
+  MantineNumberSize,
   Paper,
   Transition,
 } from "@mantine/core";
@@ -88,15 +90,22 @@ const asideLinks = (
 
 const socialLinks = <SocialLinkGroup />;
 
-export interface HeaderProps {}
+export interface HeaderProps
+  extends Omit<BaseHeaderProps, "children" | "height"> {
+  size?: MantineNumberSize;
+}
 
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC<HeaderProps> = ({ size, ...props }) => {
   const [opened, { toggle }] = useDisclosure(false);
   const { classes, cx } = useStyles();
 
   return (
-    <BaseHeader height={HEADER_HEIGHT} className={classes.root}>
-      <Container size="xl" className={classes.header}>
+    <BaseHeader
+      {...props}
+      height={HEADER_HEIGHT}
+      className={cx(classes.root, props.className)}
+    >
+      <Container size={size} className={classes.header}>
         <Group>
           <Link href="/" passHref>
             <a>
