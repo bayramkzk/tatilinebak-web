@@ -13,7 +13,7 @@ const DarkModeToggler = () => {
       sx={{ padding: 4 }}
       color={dark ? "yellow" : "blue"}
       onClick={() => toggleColorScheme()}
-      title="Toggle color scheme"
+      title={`Koyu modu ${dark ? "kapat" : "aç"}`}
     >
       {dark ? <IconSun size={ICON_SIZE} /> : <IconMoonStars size={ICON_SIZE} />}
     </ActionIcon>
