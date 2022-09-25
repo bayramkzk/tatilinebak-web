@@ -13,7 +13,6 @@ const useStyles = createStyles((themes) => ({
   },
   main: {
     width: "100%",
-    height: "100%",
   },
 }));
 
@@ -22,22 +21,35 @@ interface LayoutProps {
   size?: MantineNumberSize;
   containerProps?: ContainerProps;
   omitPadding?: boolean;
+  omitContainer?: boolean;
 }
+
+export const CONTAINER_SIZE = "lg";
 
 const Layout: React.FC<LayoutProps> = ({
   children,
-  size = "xl",
+  size = CONTAINER_SIZE,
   containerProps,
   omitPadding,
+  omitContainer,
 }) => {
   const { classes } = useStyles();
+  const main = <div className={classes.main}>{children}</div>;
 
   return (
     <>
       <Header size={size} mb={omitPadding ? undefined : "lg"} />
-      <Container size={size} className={classes.container} {...containerProps}>
-        <main className={classes.main}>{children}</main>
-      </Container>
+      {omitContainer ? (
+        main
+      ) : (
+        <Container
+          size={size}
+          className={classes.container}
+          {...containerProps}
+        >
+          {main}
+        </Container>
+      )}
     </>
   );
 };
