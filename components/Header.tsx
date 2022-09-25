@@ -12,6 +12,7 @@ import {
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import BrandLogo from "./BrandLogo";
+import DarkModeToggler from "./DarkModeToggler";
 import LinkGroup from "./LinkGroup";
 import SocialLinkGroup from "./SocialLinkGroup";
 
@@ -60,7 +61,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   burgerSocials: {
-    padding: theme.spacing.md,
+    padding: theme.spacing.sm,
     justifyContent: "space-evenly",
     "& > *": {
       flexGrow: 1,
@@ -106,6 +107,13 @@ const Header: React.FC<HeaderProps> = ({ size, ...props }) => {
       className={cx(classes.root, props.className)}
     >
       <Container size={size} className={classes.header}>
+        <Burger
+          opened={opened}
+          onClick={toggle}
+          className={classes.burger}
+          size="sm"
+        />
+
         <Group>
           <Link href="/" passHref>
             <a>
@@ -118,17 +126,15 @@ const Header: React.FC<HeaderProps> = ({ size, ...props }) => {
           </Group>
         </Group>
 
-        <Group className={classes.links}>
-          <Group spacing={5}>{asideLinks}</Group>
-          <Group spacing={2}>{socialLinks}</Group>
+        <Group>
+          <Group className={classes.links} spacing={5}>
+            {asideLinks}
+          </Group>
+          <Group className={classes.links} spacing={2}>
+            {socialLinks}
+          </Group>
+          <DarkModeToggler />
         </Group>
-
-        <Burger
-          opened={opened}
-          onClick={toggle}
-          className={classes.burger}
-          size="sm"
-        />
 
         <Transition transition="pop-top-right" duration={200} mounted={opened}>
           {(styles) => (
