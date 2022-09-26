@@ -1,4 +1,5 @@
 import {
+  AppShell,
   Container,
   ContainerProps,
   createStyles,
@@ -8,6 +9,7 @@ import React from "react";
 import Header from "./Header";
 
 const useStyles = createStyles((themes) => ({
+  shell: {},
   container: {
     width: "100%",
   },
@@ -37,20 +39,24 @@ const Layout: React.FC<LayoutProps> = ({
   const main = <div className={classes.main}>{children}</div>;
 
   return (
-    <>
-      <Header size={size} mb={omitPadding ? undefined : "lg"} />
+    <AppShell
+      header={<Header size={size} />}
+      padding={0}
+      className={classes.shell}
+    >
       {omitContainer ? (
         main
       ) : (
         <Container
           size={size}
           className={classes.container}
+          sx={{ paddingTop: omitPadding ? undefined : 16 }}
           {...containerProps}
         >
           {main}
         </Container>
       )}
-    </>
+    </AppShell>
   );
 };
 

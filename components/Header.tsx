@@ -20,8 +20,7 @@ export const HEADER_HEIGHT = 75;
 
 const useStyles = createStyles((theme) => ({
   root: {
-    position: "relative",
-    zIndex: 1,
+    zIndex: 10,
     borderBottomWidth: 2,
   },
 
@@ -103,6 +102,7 @@ const Header: React.FC<HeaderProps> = ({ size, ...props }) => {
   return (
     <BaseHeader
       {...props}
+      fixed
       height={HEADER_HEIGHT}
       className={cx(classes.root, props.className)}
     >
