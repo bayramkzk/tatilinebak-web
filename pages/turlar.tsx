@@ -1,13 +1,54 @@
+import CategoryCard from "@/components/CategoryCard";
 import Layout from "@/components/Layout";
-import { Title } from "@mantine/core";
+import { SimpleGrid, Title } from "@mantine/core";
 import { NextPage } from "next";
 
 const Turlar: NextPage = () => {
   return (
     <Layout>
-      <Title order={2} size={32}>
+      <Title order={2} size={32} mb="md">
         Turlar
       </Title>
+
+      <SimpleGrid
+        cols={3}
+        breakpoints={[
+          { maxWidth: "md", cols: 3, spacing: "md" },
+          { maxWidth: "sm", cols: 2, spacing: "sm" },
+          { maxWidth: "xs", cols: 1, spacing: "sm" },
+        ]}
+      >
+        <CategoryCard
+          title="Amsterdam Turları"
+          imageUrl="https://www.marcatour.com/images/tour/433_b.jpg"
+          id={0}
+        />
+        <CategoryCard
+          title="Amsterdam Turları"
+          imageUrl="https://www.marcatour.com/images/tour/433_b.jpg"
+          id={1}
+        />
+        <CategoryCard
+          title="Amsterdam Turları"
+          imageUrl="https://www.marcatour.com/images/tour/433_b.jpg"
+          id={2}
+        />
+        <CategoryCard
+          title="Amsterdam Turları"
+          imageUrl="https://www.marcatour.com/images/tour/433_b.jpg"
+          id={3}
+        />
+        <CategoryCard
+          title="Amsterdam Turları"
+          imageUrl="https://www.marcatour.com/images/tour/433_b.jpg"
+          id={4}
+        />
+        <CategoryCard
+          title="Amsterdam Turları"
+          imageUrl="https://www.marcatour.com/images/tour/433_b.jpg"
+          id={5}
+        />
+      </SimpleGrid>
     </Layout>
   );
 };
