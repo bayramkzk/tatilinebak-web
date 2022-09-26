@@ -1,5 +1,5 @@
-import CategoryCard from "@/components/CategoryCard";
 import Layout from "@/components/Layout";
+import TourCategoryCard from "@/components/TourCategoryCard";
 import { SimpleGrid, Title } from "@mantine/core";
 import { NextPage } from "next";
 
@@ -18,32 +18,32 @@ const Turlar: NextPage = () => {
           { maxWidth: "xs", cols: 1, spacing: "sm" },
         ]}
       >
-        <CategoryCard
+        <TourCategoryCard
           title="Amsterdam Turları"
           imageUrl="https://www.marcatour.com/images/tour/433_b.jpg"
           id={0}
         />
-        <CategoryCard
+        <TourCategoryCard
           title="Amsterdam Turları"
           imageUrl="https://www.marcatour.com/images/tour/433_b.jpg"
           id={1}
         />
-        <CategoryCard
+        <TourCategoryCard
           title="Amsterdam Turları"
           imageUrl="https://www.marcatour.com/images/tour/433_b.jpg"
           id={2}
         />
-        <CategoryCard
+        <TourCategoryCard
           title="Amsterdam Turları"
           imageUrl="https://www.marcatour.com/images/tour/433_b.jpg"
           id={3}
         />
-        <CategoryCard
+        <TourCategoryCard
           title="Amsterdam Turları"
           imageUrl="https://www.marcatour.com/images/tour/433_b.jpg"
           id={4}
         />
-        <CategoryCard
+        <TourCategoryCard
           title="Amsterdam Turları"
           imageUrl="https://www.marcatour.com/images/tour/433_b.jpg"
           id={5}

@@ -1,13 +1,13 @@
 import { Card, Image, Text } from "@mantine/core";
 import React from "react";
 
-export interface CategoryCardProps {
+export interface TourCategoryCardProps {
   title: string;
   imageUrl: string;
   id: number;
 }
 
-const CategoryCard: React.FC<CategoryCardProps> = (props) => {
+const TourCategoryCard: React.FC<TourCategoryCardProps> = (props) => {
   return (
     <Card shadow="sm" p="lg" radius="md" withBorder>
       <Card.Section>
@@ -24,4 +24,4 @@ const CategoryCard: React.FC<CategoryCardProps> = (props) => {
   );
 };
 
-export default CategoryCard;
+export default TourCategoryCard;
