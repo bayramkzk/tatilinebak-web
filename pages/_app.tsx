@@ -1,3 +1,4 @@
+import { RouterTransition } from "@/components/RouterTransition";
 import "@/styles/globals.css";
 import {
   ColorScheme,
@@ -76,6 +77,7 @@ export default function App({ Component, pageProps }: AppProps) {
         toggleColorScheme={toggleColorScheme}
       >
         <MantineProvider withGlobalStyles withNormalizeCSS theme={mantineTheme}>
+          <RouterTransition />
           <NotificationsProvider>
             <Component {...pageProps} />
           </NotificationsProvider>
