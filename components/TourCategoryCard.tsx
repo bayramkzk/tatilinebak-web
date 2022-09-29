@@ -11,7 +11,7 @@ const TourCategoryCard: React.FC<TourCategoryCardProps> = (props) => {
   return (
     <Card shadow="sm" p="lg" radius="md" withBorder>
       <Card.Section>
-        <Image src={props.imageUrl} />
+        <Image src={props.imageUrl} alt={props.title} />
       </Card.Section>
       <Text my="md" weight={500} size="xl">
         {props.title}
