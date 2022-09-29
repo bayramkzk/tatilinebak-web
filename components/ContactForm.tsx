@@ -15,14 +15,28 @@ const LABEL_PROPS = { style: { marginBottom: 6 } };
 
 export interface ContactFormProps {}
 
+const checkOptionalPhone = (number: number | undefined) => {
+  const phone = String(number || "");
+  if (phone.length === 0) return true;
+  return /^\d{10}$/.test(phone);
+};
+
 const ContactForm: React.FC<ContactFormProps> = () => {
   const form = useForm({
     initialValues: {
       name: "",
       email: "",
-      phone: "",
-      message: "",
+      phone: undefined as number | undefined,
+      subject: "",
     },
+    validate: (values) => ({
+      name: !values.name.trim() && "İsim boş bırakılamaz",
+      email: !values.email.trim() && "E-posta boş bırakılamaz",
+      phone:
+        !checkOptionalPhone(values.phone) &&
+        "Telefon numarası giriliyorsa 10 haneli olmalıdır",
+      subject: !values.subject.trim() && "E-posta konusu boş bırakılamaz",
+    }),
   });
 
   const onSubmit = form.onSubmit((values) => {
@@ -36,7 +50,6 @@ const ContactForm: React.FC<ContactFormProps> = () => {
           <Stack>
             <TextInput
               withAsterisk
-              required
               label="İsim"
               labelProps={LABEL_PROPS}
               placeholder="İsim"
@@ -47,7 +60,6 @@ const ContactForm: React.FC<ContactFormProps> = () => {
 
             <TextInput
               withAsterisk
-              required
               type="email"
               label="E-posta adresi"
               labelProps={LABEL_PROPS}
@@ -64,6 +76,7 @@ const ContactForm: React.FC<ContactFormProps> = () => {
               placeholder="Telefon numarası"
               icon={<IconPhone />}
               size={INPUT_SIZE}
+              maxLength={10}
               {...form.getInputProps("phone")}
             />
           </Stack>
@@ -72,14 +85,13 @@ const ContactForm: React.FC<ContactFormProps> = () => {
         <Grid.Col span={12} md={6}>
           <Textarea
             withAsterisk
-            required
             label="Konu"
             labelProps={LABEL_PROPS}
             placeholder="Konu"
             size={INPUT_SIZE}
             minRows={8}
             autosize
-            {...form.getInputProps("message")}
+            {...form.getInputProps("subject")}
           />
         </Grid.Col>
 
