@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
+import PageTitle from "@/components/PageTitle";
 import TourCategoryCard from "@/components/TourCategoryCard";
 import { SimpleGrid } from "@mantine/core";
 import { NextPage } from "next";
@@ -7,7 +7,7 @@ import { NextPage } from "next";
 const Turlar: NextPage = () => {
   return (
     <Layout>
-      <PageHeader title="Turlar" />
+      <PageTitle title="Turlar" />
 
       <SimpleGrid
         cols={3}

@@ -1,11 +1,11 @@
 import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
+import PageTitle from "@/components/PageTitle";
 import { NextPage } from "next";
 
 const Hakkimizda: NextPage = () => {
   return (
     <Layout>
-      <PageHeader title="Hakkımızda" />
+      <PageTitle title="Hakkımızda" />
     </Layout>
   );
 };

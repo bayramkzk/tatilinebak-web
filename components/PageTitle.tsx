@@ -5,7 +5,7 @@ export interface PageHeaderProps {
   title: string;
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({ title }) => {
+const PageTitle: React.FC<PageHeaderProps> = ({ title }) => {
   return (
     <Title order={2} size={32} my="xl">
       {title}
@@ -13,4 +13,4 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title }) => {
   );
 };
 
-export default PageHeader;
+export default PageTitle;
