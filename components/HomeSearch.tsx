@@ -16,13 +16,13 @@ const useStyles = createStyles((theme) => ({
     width: "100%",
     background:
       theme.colorScheme === "light"
-        ? "rgba(255, 255, 255, 0.2)"
-        : "rgba(0, 0, 0, 0.2)",
-    borderRadius: theme.radius.sm,
-    backdropFilter: "blur(4px)",
-    "-webkit-backdrop-filter": "blur(4px)",
+        ? theme.colors.gray[0]
+        : theme.colors.dark[7],
     border:
-      theme.colorScheme === "light" ? "1px solid #fff5" : "1px solid #0005",
+      theme.colorScheme === "light"
+        ? theme.colors.gray[2]
+        : theme.colors.dark[6],
+    borderRadius: theme.radius.sm,
   },
   location: {
     flexGrow: 2,
