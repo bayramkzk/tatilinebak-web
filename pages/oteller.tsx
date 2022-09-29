@@ -1,13 +1,11 @@
 import Layout from "@/components/Layout";
-import { Title } from "@mantine/core";
+import PageHeader from "@/components/PageHeader";
 import { NextPage } from "next";
 
 const Oteller: NextPage = () => {
   return (
     <Layout>
-      <Title order={2} size={32}>
-        Oteller
-      </Title>
+      <PageHeader title="Oteller" />
     </Layout>
   );
 };
