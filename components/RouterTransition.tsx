@@ -25,5 +25,5 @@ export function RouterTransition() {
     };
   }, [router.asPath, router.events]);
 
-  return <NavigationProgress />;
+  return <NavigationProgress progressLabel="Navigasyon yüklenme çubuğu" />;
 }

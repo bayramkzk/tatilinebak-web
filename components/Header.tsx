@@ -112,6 +112,7 @@ const Header: React.FC<HeaderProps> = ({ size, ...props }) => {
           onClick={toggle}
           className={classes.burger}
           size="sm"
+          aria-label="Menüyü aç"
         />
 
         <Group>
