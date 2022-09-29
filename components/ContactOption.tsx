@@ -1,6 +1,17 @@
-import { Card, Center, Group, Text } from "@mantine/core";
+import { Card, Center, createStyles, Group, Text } from "@mantine/core";
 import Link from "next/link";
 import React from "react";
+
+const useStyles = createStyles((theme) => ({
+  card: {
+    "&:hover": {
+      backgroundColor:
+        theme.colorScheme === "dark"
+          ? theme.colors.dark[8]
+          : theme.colors.gray[0],
+    },
+  },
+}));
 
 export interface ContactOptionProps {
   icon: React.ReactNode;
@@ -15,8 +26,10 @@ const ContactOption: React.FC<ContactOptionProps> = ({
   label,
   title,
 }) => {
+  const { classes } = useStyles();
+
   const card = (
-    <Card shadow="md" radius="md" title={title}>
+    <Card shadow="md" radius="md" title={title} className={classes.card}>
       <Center>
         <Group align="center" noWrap>
           {icon}
