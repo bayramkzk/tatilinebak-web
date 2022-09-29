@@ -29,7 +29,7 @@ const ContactOption: React.FC<ContactOptionProps> = ({
   );
 
   return href ? (
-    <Link href={"#"} passHref>
+    <Link href={href} passHref>
       <a>{card}</a>
     </Link>
   ) : (
