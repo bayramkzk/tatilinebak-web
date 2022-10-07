@@ -52,7 +52,7 @@ const ContactForm: React.FC<ContactFormProps> = () => {
               withAsterisk
               label="İsim"
               labelProps={LABEL_PROPS}
-              placeholder="İsim"
+              placeholder="İsim Soyisim"
               icon={<IconLetterCase />}
               size={INPUT_SIZE}
               {...form.getInputProps("name")}
@@ -63,7 +63,7 @@ const ContactForm: React.FC<ContactFormProps> = () => {
               type="email"
               label="E-posta adresi"
               labelProps={LABEL_PROPS}
-              placeholder="E-posta adresi"
+              placeholder="e.posta@adresi.com"
               icon={<IconAt />}
               size={INPUT_SIZE}
               {...form.getInputProps("email")}
@@ -73,7 +73,7 @@ const ContactForm: React.FC<ContactFormProps> = () => {
               hideControls
               label="Telefon numarası"
               labelProps={LABEL_PROPS}
-              placeholder="Telefon numarası"
+              placeholder="5551234567"
               icon={<IconPhone />}
               size={INPUT_SIZE}
               maxLength={10}
@@ -87,7 +87,7 @@ const ContactForm: React.FC<ContactFormProps> = () => {
             withAsterisk
             label="Konu"
             labelProps={LABEL_PROPS}
-            placeholder="Konu"
+            placeholder="Amsterdam turu için randevu almak istiyorum"
             size={INPUT_SIZE}
             minRows={8}
             autosize
